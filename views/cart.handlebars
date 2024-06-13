@@ -1,0 +1,16 @@
+<h1>Carrinho de Compras</h1>
+<ul>
+  {{#each cart}}
+    <li>
+      <h2>{{this.name}}</h2>
+      <h2>{{this.price}}</h2>
+      <img style='width: 100px; height: 100px' src='/uploads/{{this.image}}' alt='{{this.name}}' />
+      <p>Quantidade: {{this.quantity}}</p>
+      <form action='/cart/remove' method='post'>
+        <input type='hidden' name='id' value='{{this.id}}' />
+        <button type='submit'>Remover do Carrinho</button>
+      </form>
+    </li>
+  {{/each}}
+</ul>
+<a href='/'>Voltar para a Loja</a>
