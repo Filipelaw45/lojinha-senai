@@ -36,7 +36,6 @@ app.get('/', async (req, res) => {
   try {
     const products = await Product.findAll();
     const productData = products.map(product => product.dataValues);
-    console.log(productData);
     res.render('home', { products: productData });
   } catch (error) {
     console.error(error);
@@ -71,7 +70,7 @@ app.get('/cart', async (req, res) => {
           id: product.id,
           name: product.name,
           image: product.image,
-          price: product.price,
+          price: parseInt(product.price).toFixed(2),
           quantity: item.quantity
         });
       }
