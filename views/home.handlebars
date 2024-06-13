@@ -13,8 +13,8 @@
       <li>
         <h2>{{this.name}}</h2>
         <p>{{this.description}}</p>
-        <p>R$ {{this.price}}</p>
         <img src="/uploads/{{this.image}}" alt="{{this.name}}" />
+        <p>R$ {{this.price}}.00</p>
         <form action="/cart/add" method="post">
           <input type="hidden" name="id" value="{{this.id}}" />
           <button type="submit">Adicionar ao Carrinho</button>

@@ -1,21 +1,27 @@
-<h1>Carrinho de Compras</h1>
-<div id="cart-products-container">
+<h1 style=" text-align: center">Carrinho de Compras</h1>
+<div id='cart-products-container'>
   <ul>
     {{#each cart}}
       <li>
         <h2>{{this.name}}</h2>
         <h2>R$ {{this.price}}</h2>
         <img
-          style="width: 100px; height: 100px"
-          src="/uploads/{{this.image}}"
-          alt="{{this.name}}"
+          style='width: 100px; height: 100px'
+          src='/uploads/{{this.image}}'
+          alt='{{this.name}}'
         />
         <p>Quantidade: {{this.quantity}}</p>
-        <form action="/cart/remove" method="post">
-          <input type="hidden" name="id" value="{{this.id}}" />
-          <button type="submit">Remover do Carrinho</button>
+        <form action='/cart/remove' method='post'>
+          <input type='hidden' name='id' value='{{this.id}}' />
+          <button type='submit'>Remover do Carrinho</button>
         </form>
       </li>
     {{/each}}
   </ul>
+</div>
+<div style="display: flex; justify-content: center">
+  <button
+    style=' cursor: pointer; margin: auto; padding: .7rem 1.5rem ; background-color: green; border: 2px solid white;'
+  >Comprar</button>
+
 </div>
