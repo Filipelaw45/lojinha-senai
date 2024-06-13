@@ -39,6 +39,7 @@ app.get('/', async (req, res) => {
     console.log(productData);
     res.render('home', { products: productData });
   } catch (error) {
+    console.error(error);
     res.status(500).send('Erro ao carregar os produtos');
   }
 });
